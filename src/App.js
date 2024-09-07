@@ -1,10 +1,13 @@
 import "./App.css";
 import { BooksProvider } from "./BooksContext";
+import Books from "./components/Books";
 
 function App() {
-  <BooksProvider>
-    return <div className="App"></div>;
-  </BooksProvider>;
+  return (
+    <BooksProvider>
+      <Books></Books>
+    </BooksProvider>
+  );
 }
 
 export default App;
