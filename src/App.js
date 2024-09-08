@@ -9,6 +9,8 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import SecretBookList from "./components/SecretBookList";
+import { PrivateRoute } from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -22,6 +24,12 @@ function App() {
             element={<BookDetails></BookDetails>}
           ></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
+          <Route
+            path="/secret"
+            element={
+              <PrivateRoute Component={<SecretBookList />}></PrivateRoute>
+            }
+          ></Route>
         </Routes>
       </Router>
     </BooksProvider>
